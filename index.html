@@ -3,113 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mumbra Grill | Premium Taste</title>
+    <title>Mumbra Guide | Home of Mumbra</title>
     <style>
-        /* Clean White Design */
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff; /* Pure White Background */
-            color: #333;
-        }
+        :root { --primary: #2c3e50; --accent: #27ae60; --light: #f4f7f6; --white: #ffffff; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); scroll-behavior: smooth; }
+        
+        /* Navigation Menu */
+        nav { background: var(--primary); padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; overflow-x: auto; gap: 15px; }
+        nav a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: bold; white-space: nowrap; padding: 5px 10px; border-radius: 5px; }
+        nav a:hover { background: rgba(255,255,255,0.2); }
 
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            border-bottom: 1px solid #eee;
-        }
+        /* Sections Styling */
+        section { padding: 80px 20px 40px; min-height: 80vh; border-bottom: 1px solid #ddd; }
+        .container { max-width: 800px; margin: auto; }
+        .card { background: var(--white); padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
 
-        h1 { margin: 0; color: #d35400; font-size: 2.5rem; letter-spacing: 2px; }
-        .tagline { color: #7f8c8d; font-size: 1.1rem; margin-top: 10px; }
+        /* Home Page */
+        #home { text-align: center; background: linear-gradient(135deg, #2c3e50, #4ca1af); color: white; display: flex; align-items: center; justify-content: center; height: 100vh; padding-top: 0; }
+        .welcome-text { font-size: 1.2rem; letter-spacing: 3px; margin-bottom: 0; }
+        .main-title { font-size: 3.5rem; margin-top: 0; text-transform: uppercase; }
 
-        .container { max-width: 600px; margin: auto; padding: 20px; }
+        /* Train Finder - Platform Map */
+        .platform-map { background: #333; color: #fff; padding: 20px; border-radius: 10px; font-family: monospace; position: relative; margin: 20px 0; }
+        .track { border-top: 2px dashed #666; margin: 20px 0; padding: 10px 0; position: relative; }
+        .track::after { content: '➔'; position: absolute; right: 0; top: 5px; color: #ffeb3b; }
+        .track-left::after { content: '⬅'; left: 0; right: auto; }
+        .p-num { background: #ffeb3b; color: #000; padding: 2px 8px; border-radius: 3px; font-weight: bold; margin-right: 10px; }
 
-        /* Photos Styling */
-        .food-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+        /* Namaz Section */
+        .time-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; align-items: center; }
+        .edit-btn { background: none; border: 1px solid #ccc; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; }
 
-        /* Information Section */
-        .info-box {
-            background: #fafafa;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            border: 1px solid #eee;
-        }
+        /* Buttons */
+        .btn-loc { display: inline-block; background: #4285F4; color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; margin-top: 10px; font-weight: bold; }
+        
+        /* Map Frame */
+        .map-box { width: 100%; height: 300px; background: #ddd; border-radius: 15px; display: flex; align-items: center; justify-content: center; }
 
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed #ccc;
-            padding-bottom: 5px;
-        }
-
-        /* Active Buttons */
-        .btn {
-            display: block;
-            text-align: center;
-            padding: 15px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            transition: 0.3s;
-        }
-
-        .btn-whatsapp { background-color: #25d366; color: white; }
-        .btn-map { background-color: #4285F4; color: white; }
-
-        footer { text-align: center; padding: 30px; color: #95a5a6; font-size: 0.9rem; }
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>THE MUMBRA GRILL</h1>
-        <p class="tagline">Authentic Flavors, Modern Style</p>
-    </header>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#train">TRAIN FINDER</a>
+        <a href="#namaz">NAMAZ</a>
+        <a href="#hospital">HOSPITAL</a>
+        <a href="#education">SCHOOL/COLLEGE</a>
+        <a href="#map">MUMBRA MAP</a>
+    </nav>
 
-    <div class="container">
-        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Delicious Food" class="food-img">
-
-        <div class="info-box">
-            <h3>📖 Today's Signature Menu</h3>
-            <div class="menu-item"><span>Special Chicken Platter</span> <span>₹250</span></div>
-            <div class="menu-item"><span>Mumbra King Biryani</span> <span>₹180</span></div>
-            <div class="menu-item"><span>Cheese Garlic Naan</span> <span>₹60</span></div>
-            <div class="menu-item"><span>Cold Coffee with Ice Cream</span> <span>₹90</span></div>
+    <section id="home">
+        <div class="container">
+            <p class="welcome-text">WELCOME TO</p>
+            <h1 class="main-title">Mumbra Guide</h1>
+            <p>Aapki City, Aapki Digital Pehchan</p>
+            <p style="margin-top: 50px;">Niche scroll karein ya menu chunein 👇</p>
         </div>
+    </section>
 
-        <div class="info-box">
-            <h3>⏰ Opening Hours</h3>
-            <p>Monday - Sunday: 11:00 AM - 11:30 PM</p>
-            <p>📍 Near Mumbra Station, Thane</p>
+    <section id="train">
+        <div class="container">
+            <h2>🚂 Train Platform Finder</h2>
+            <div class="card">
+                <p><strong>Mumbra Station Layout:</strong></p>
+                <div class="platform-map">
+                    <div class="track track-left"><span class="p-num">4</span> FAST (To CSMT) ⬅</div>
+                    <div class="track track-left"><span class="p-num">3</span> FAST (To Kalyan) ➔</div>
+                    <div class="track"><span class="p-num">2</span> SLOW (To CSMT) ⬅</div>
+                    <div class="track"><span class="p-num">1</span> SLOW (To Kalyan) ➔</div>
+                </div>
+                <input type="text" id="dest" placeholder="Kahan jana hai? (Ex: CSMT, Thane, Kalyan)" style="width:100%; padding:15px; border-radius:10px; border:1px solid #ddd;">
+                <button onclick="findTrain()" style="width:100%; padding:15px; margin-top:10px; background:var(--primary); color:white; border:none; border-radius:10px; font-weight:bold;">Find Platform</button>
+                <p id="train-res" style="text-align:center; margin-top:20px; font-size:1.2rem; font-weight:bold;"></p>
+            </div>
         </div>
+    </section>
 
-        <a href="https://wa.me/917880454496?text=Hi%20Mumbra%20Grill,%20I%20want%20to%20place%20an%20order!" class="btn btn-whatsapp">
-            📲 WhatsApp to Order Now
-        </a>
+    <section id="namaz">
+        <div class="container">
+            <h2>🕌 Namaz Timings</h2>
+            <div class="card">
+                <h3>Kausa Badi Masjid</h3>
+                <div class="time-row"><span>Fajr</span> <span contenteditable="true" class="time-val">05:15 AM</span> <button class="edit-btn">Edit</button></div>
+                <div class="time-row"><span>Zohr</span> <span contenteditable="true" class="time-val">12:45 PM</span> <button class="edit-btn">Edit</button></div>
+                <div class="time-row"><span>Asr</span> <span contenteditable="true" class="time-val">05:15 PM</span> <button class="edit-btn">Edit</button></div>
+                <div class="time-row"><span>Maghrib</span> <span contenteditable="true" class="time-val">07:08 PM</span> <button class="edit-btn">Edit</button></div>
+                <div class="time-row"><span>Isha</span> <span contenteditable="true" class="time-val">08:35 PM</span> <button class="edit-btn">Edit</button></div>
+                <a href="http://googleusercontent.com/maps.google.com/3" class="btn-loc">📍 View Location</a>
+            </div>
+        </div>
+    </section>
 
-        <a href="https://www.google.com/maps?q=Mumbra+Railway+Station" target="_blank" class="btn btn-map">
-            📍 Open in Google Maps
-        </a>
+    <section id="hospital">
+        <div class="container">
+            <h2>🏥 Hospitals in Mumbra</h2>
+            <div class="card">
+                <h3>Kalsekar Hospital</h3>
+                <p>📍 Near Kausa, Mumbra</p>
+                <a href="http://googleusercontent.com/maps.google.com/4" class="btn-loc">📍 Open in Maps</a>
+            </div>
+            <div class="card">
+                <h3>Bilal Hospital</h3>
+                <p>📍 Amrut Nagar, Mumbra</p>
+                <a href="http://googleusercontent.com/maps.google.com/5" class="btn-loc">📍 Open in Maps</a>
+            </div>
+        </div>
+    </section>
 
-        <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Burger & Fries" class="food-img" style="margin-top: 20px;">
-    </div>
+    <section id="education">
+        <div class="container">
+            <h2>🎓 Education Hub</h2>
+            <div class="card">
+                <h3>M.H. High School & Jr. College</h3>
+                <p>📍 Near Station, Mumbra</p>
+                <a href="http://googleusercontent.com/maps.google.com/6" class="btn-loc">📍 Location</a>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 The Mumbra Grill. All rights reserved.</p>
-        <p>Built with ❤️ in Mumbra</p>
-    </footer>
+    <section id="map">
+        <div class="container">
+            <h2>🌍 Mumbra Full Map</h2>
+            <div class="card">
+                <div class="map-box">
+                    <p>Google Map Integration Coming Soon...</p>
+                </div>
+                <p style="margin-top:15px;">Mumbra ke kone-kone ka rasta yahan dekhein.</p>
+                <a href="http://googleusercontent.com/maps.google.com/7" class="btn-loc" style="width:100%; text-align:center;">Click to Open Live Mumbra Map</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function findTrain() {
+            let val = document.getElementById('dest').value.toLowerCase();
+            let res = document.getElementById('train-res');
+            
+            let csmt = ['csmt', 'dadar', 'kurla', 'thané', 'vikhroli', 'mulund', 'sion', 'byculla', 'ghatkopar'];
+            let kalyan = ['kalyan', 'dombivli', 'karjat', 'kasara', 'titwala', 'ambernath', 'badlapur'];
+
+            if (csmt.some(s => val.includes(s))) {
+                res.innerHTML = "✅ Platform No. 2 (Slow) or 4 (Fast) par jao.<br><small>Final Destination: CSMT ⬅</small>";
+                res.style.color = "#27ae60";
+            } else if (kalyan.some(s => val.includes(s))) {
+                res.innerHTML = "✅ Platform No. 1 (Slow) or 3 (Fast) par jao.<br><small>Final Destination: Kalyan/Karjat ➔</small>";
+                res.style.color = "#2980b9";
+            } else {
+                res.innerHTML = "❌ Please enter a valid station name.";
+                res.style.color = "#e74c3c";
+            }
+        }
+    </script>
 
 </body>
 </html>
